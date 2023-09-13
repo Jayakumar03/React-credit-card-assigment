@@ -44,7 +44,12 @@ export const CardDetails = () => {
         </div>
       </form>
 
-      <button className="w-[100%] h-8 border-[1px] bg-purple-700 border-slate-500 rounded-md focus:outline-none hover:bg-white-600 focus:border-red-500 focus:ring-3 focus:ring-sky-500 relative top-8 text-center" type="submit">Confirm</button>
+      <button
+        className="w-[100%] h-8 border-[1px] bg-purple-700 border-slate-500 rounded-md focus:outline-none hover:bg-white-600 focus:border-red-500 focus:ring-3 focus:ring-sky-500 relative top-8 text-center"
+        type="submit"
+      >
+        Confirm
+      </button>
     </div>
   );
 };

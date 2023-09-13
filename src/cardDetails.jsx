@@ -9,6 +9,7 @@ export const CardDetails = () => {
             className=" border-[1px] border-slate-500 rounded-md w-[100%] py-1 my-1 focus:outline-none focus:border-red-500 focus:ring-3 focus:ring-sky-500   "
             type="text"
             placeholder="Name In Card"
+            
           ></input>
         </div>
         <div className="py-1  ">

@@ -2,11 +2,11 @@ import { useState } from "react";
 
 export const CardDetails = () => {
   // Card Details
-  const [cardName, setCardName] = useState();
-  const [cardNumber, setCardNumber] = useState();
-  const [month, setMonth] = useState();
-  const [year, setYear] = useState();
-  const [cvc, setCvc] = useState();
+  const [cardName, setCardName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [cvc, setCvc] = useState("");
 
   // Card validation error messages
 
@@ -16,10 +16,26 @@ export const CardDetails = () => {
   const [cardYearErrorMessage, setCardYearErrorMessage] = useState(false);
   const [cvcErrorMessage, setCvcErrorMessage] = useState(false);
 
-  const submitHandler = () => {
-    console.log("hello");
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (cardName.length === 0) {
+      setnameErrorMessage(true);
+    }
 
-    if (cardNumber < 12 || cardNumber > 12) {
+    if (cardNumber.length !== 12) {
+      setCardNumberErrorMessage(true);
+    }
+
+    if (month.length !== 2) {
+      setCardMonthErrorMessage(true);
+    }
+
+    if (year.length !== 2) {
+      setCardYearErrorMessage(true);
+    }
+
+    if (cvc.length !== 3) {
+      setCvcErrorMessage(true);
     }
   };
 
@@ -40,10 +56,14 @@ export const CardDetails = () => {
               console.log(cardName);
             }}
           ></input>
-          <label className="block text-red-600">Name is required</label>
+          {nameErrorMessage ? (
+            <label className="block text-red-600">Name is required</label>
+          ) : (
+            ""
+          )}
         </div>
 
-        {/* Card name section */}
+        {/* Card number section */}
         <div className="py-1  ">
           <p>CARD NUMBER</p>
           <input
@@ -52,9 +72,16 @@ export const CardDetails = () => {
             placeholder="CARD NUMBER"
             value={cardNumber}
             onChange={(e) => {
-              setCardName(e.target.value);
+              setCardNumber(e.target.value);
             }}
           ></input>
+          {cardNumberErrorMessage ? (
+            <label className="block text-red-600 ">
+              Card Number is required
+            </label>
+          ) : (
+            ""
+          )}
         </div>
 
         {/* Card details section */}
@@ -71,11 +98,20 @@ export const CardDetails = () => {
             className="w-[10%] border-[1px] border-slate-500 rounded-md focus:outline-none focus:border-purple-500"
             type="NUMBER"
             placeholder="MM"
+            min={2}
+            maxLength="2"
+            minLength="2"
             onChange={(e) => {
               setMonth(e.target.value);
             }}
             value={month}
           ></input>
+          {cardMonthErrorMessage ? (
+            <label className=" block text-red-600 relative right-[10%] top-10 text-xs ">can't be blank</label>
+          ) : (
+            ""
+          )}
+
           <input
             className="w-[10%] border-[1px] border-slate-500 rounded-md focus:outline-none focus:border-purple-500"
             type="NUMBER"
@@ -85,6 +121,12 @@ export const CardDetails = () => {
               setYear(e.target.value);
             }}
           ></input>
+
+          {cardYearErrorMessage ? (
+            <label className=" block text-red-600">can't be blank</label>
+          ) : (
+            ""
+          )}
           <input
             className="relative left-[20%] w-[30%] border-[1px] border-slate-500 rounded-md focus:outline-none focus:border-purple-500 "
             type="NUMBER"
@@ -94,6 +136,11 @@ export const CardDetails = () => {
               setCvc(e.target.value);
             }}
           ></input>
+          {cvcErrorMessage ? (
+            <label className=" block text-red-600">Cvc is required</label>
+          ) : (
+            ""
+          )}
         </div>
       </form>
 

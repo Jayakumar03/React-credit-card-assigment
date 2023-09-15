@@ -33,7 +33,7 @@ npm install
 or
 yarn install
 
-## 3. Then, you can access the application on your browser at http://localhost:5178.
+### 3. Then, you can access the application on your browser at http://localhost:5178.
 
 ## 4 .Validations
 The CardDetails component performs validations on the card input fields. Each field (Card name, Card number, Expiration date - month and year, and CVC) is required and has its own validation criteria. An error toast message is displayed for invalid entries.

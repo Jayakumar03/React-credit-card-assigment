@@ -16,6 +16,7 @@ const Card = () => {
 
 
         <CardDetails/>
+        
     </div>
 
     

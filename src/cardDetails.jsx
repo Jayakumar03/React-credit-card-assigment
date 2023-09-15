@@ -10,6 +10,8 @@ export const CardDetails = () => {
   const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
 
+  
+
   // Card validation error messages
   const [nameErrorMessage, setnameErrorMessage] = useState(false);
   const [cardNumberErrorMessage, setCardNumberErrorMessage] = useState(false);
@@ -260,7 +262,7 @@ export const CardDetails = () => {
         Confirm
       </button>
 
-      
+
       {/* React -toastify */}
       <ToastContainer />
     </div>

@@ -225,36 +225,35 @@ export const CardDetails = () => {
       <div
         className={`${
           cardMonthErrorMessage || cardYearErrorMessage || cvcErrorMessage
-            ? " w-3/4 h-10 my-3 flex gap-20"
+            ? " w-3/4 h-10 my-3 flex"
             : ""
         }`}
       >
-        {/* outline outline-2 */}
+        
         <div className="flex gap-2 ">
-          <p>
+        
             {cardMonthErrorMessage ? (
-              <label className="text-red-600 text-md ">can't be blank</label>
+              <p className="text-red-600 text-md ">can't be blank</p>
             ) : (
               ""
             )}
-          </p>
+          
 
-          <p>
+        
             {cardYearErrorMessage ? (
-              <label className="text-red-600 text-md ">can't be blank</label>
+              <p className="text-red-600 text-md ">can't be blank</p>
             ) : (
               ""
             )}
-          </p>
+          
         </div>
 
-        <p>
+        
           {cvcErrorMessage ? (
-            <label className=" block text-red-600 ">Cvc is required</label>
+            <p className=" block text-red-600 relative left-[60%] ">Cvc is required</p>
           ) : (
             ""
           )}
-        </p>
       </div>
 
       <button

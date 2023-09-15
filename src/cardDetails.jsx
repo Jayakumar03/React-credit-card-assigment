@@ -21,7 +21,7 @@ export const CardDetails = () => {
     e.preventDefault();
     if (cardName.length === 0) {
       setnameErrorMessage(true);
-      toast.error('🦄 card Name is required!', {
+      toast.error("🦄 card Name is required!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -30,13 +30,13 @@ export const CardDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-        return;
+      });
+      return;
     }
 
     if (cardNumber.length !== 12) {
       setCardNumberErrorMessage(true);
-      toast.error('🦄 Card Number  is required!', {
+      toast.error("🦄 Card Number  is required!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -45,14 +45,13 @@ export const CardDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-        return;
-
+      });
+      return;
     }
 
     if (month.length !== 2) {
       setCardMonthErrorMessage(true);
-      toast.error('🦄 Card Month  is required!', {
+      toast.error("🦄 Card Month  is required!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -61,13 +60,13 @@ export const CardDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-        return;
+      });
+      return;
     }
 
     if (year.length !== 2) {
       setCardYearErrorMessage(true);
-      toast.error('🦄 Card Year  is required!', {
+      toast.error("🦄 Card Year  is required!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -76,13 +75,13 @@ export const CardDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-        return;
+      });
+      return;
     }
 
     if (cvc.length !== 3) {
       setCvcErrorMessage(true);
-      toast.error('🦄 Card Cvc  is required!', {
+      toast.error("🦄 Card Cvc  is required!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -91,8 +90,8 @@ export const CardDetails = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-        return;
+      });
+      return;
     }
 
     toast("Wow Eveything is correct");
@@ -105,7 +104,6 @@ export const CardDetails = () => {
 
   return (
     <div className=" w-1/3 h-2/4 relative left-[50%] bottom-[90%]">
-      <ToastContainer />
       <form className=" font-mono flex flex-col gap-5" onSubmit={submitHandler}>
         {/* Card holder name section */}
         <div className="py-1">
@@ -229,31 +227,27 @@ export const CardDetails = () => {
             : ""
         }`}
       >
-        
         <div className="flex gap-2 ">
-        
-            {cardMonthErrorMessage ? (
-              <p className="text-red-600 text-md ">can't be blank</p>
-            ) : (
-              ""
-            )}
-          
-
-        
-            {cardYearErrorMessage ? (
-              <p className="text-red-600 text-md ">can't be blank</p>
-            ) : (
-              ""
-            )}
-          
-        </div>
-
-        
-          {cvcErrorMessage ? (
-            <p className=" block text-red-600 relative left-[60%] ">Cvc is required</p>
+          {cardMonthErrorMessage ? (
+            <p className="text-red-600 text-md ">can't be blank</p>
           ) : (
             ""
           )}
+
+          {cardYearErrorMessage ? (
+            <p className="text-red-600 text-md ">can't be blank</p>
+          ) : (
+            ""
+          )}
+        </div>
+
+        {cvcErrorMessage ? (
+          <p className=" block text-red-600 relative left-[60%] ">
+            Cvc is required
+          </p>
+        ) : (
+          ""
+        )}
       </div>
 
       <button
@@ -265,6 +259,10 @@ export const CardDetails = () => {
       >
         Confirm
       </button>
+
+      
+      {/* React -toastify */}
+      <ToastContainer />
     </div>
   );
 };

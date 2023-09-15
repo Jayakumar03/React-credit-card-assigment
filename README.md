@@ -5,7 +5,7 @@ This project is a credit card assignment implemented with React.js. The applicat
 
 ### Deployed Link
 
-[React Credit Card Assignment](http://deployed-link.com)
+[React Credit Card Assignment](https://react-credit-card-assigment.vercel.app/)
 
 ### Card Component
 

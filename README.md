@@ -3,24 +3,24 @@
 
 This project is a credit card assignment implemented with React.js. The application contains two main components: `Card` and `CardDetails`.
 
-## Deployed Link
+### Deployed Link
 
 [React Credit Card Assignment](http://deployed-link.com)
 
-## Card Component
+### Card Component
 
 This component renders a visual representation of a credit card and includes a CardDetails component.
 
-## CardDetails Component
+### CardDetails Component
 
 This component contains the form for inputting and validating card details. The details include card name, card number, expiration date (month and year), and the Card Validation Code (CVC).
 
-## Prerequisites
+### Prerequisites
 
 * Node.js installed (preferably the latest version)
 * A package manager like npm or yarn.
 
-## 1. Installation
+### 1. Installation
 
 1. Clone the repository to your local machine.
 
@@ -28,14 +28,14 @@ This component contains the form for inputting and validating card details. The 
 git clone https://github.com/username/repository.git
 ```
 
-## 2.Install the project dependencies.
+### 2.Install the project dependencies.
 npm install
 or
 yarn install
 
 ### 3. Then, you can access the application on your browser at http://localhost:5178.
 
-## 4 .Validations
+### 4 .Validations
 The CardDetails component performs validations on the card input fields. Each field (Card name, Card number, Expiration date - month and year, and CVC) is required and has its own validation criteria. An error toast message is displayed for invalid entries.
 
 Disclaimer
